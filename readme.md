@@ -1,8 +1,6 @@
 # Backend Server
 
-By the end of this lesson. You should be able to set up two separate servers that will speak with each other -- one with frontend code and the other with react code.
-
-This repository contains the backend for the `w6-frontend` repository.
+This repository contains the backend for the `final-frontend` repository.
 
 ## Installation
 
