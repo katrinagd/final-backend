@@ -10,16 +10,29 @@ const reset = async () => {
   await User.deleteMany() // Deletes all records
   return User.create([
     {
-      name: 'Student User',
-      username: 'student.user',
+      email: 'student@email.com',
       password: bcrypt.hashSync('password', 10),
-      posts: [
+      first_name: 'Jonh',
+      last_name: 'Smith',
+      admin: false,
+      average: 80,
+      assignments: [
         {
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida tincidunt tellus, vel vehicula turpis euismod a. Nulla lobortis mi nec sagittis hendrerit. Sed ultrices metus ut eros interdum, vel blandit mi lacinia.',
-          emotion: 'joy'
+          title: 'HTML/CSS',
+          project_description: 'HTML, CSS and some JS',
+          project_link: 'http://www.google.com/',
+          score: 85,
+          base: 100
         }
       ]
-    }
+    },
+    {
+      email: 'admin@email.com',
+      password: bcrypt.hashSync('password', 10),
+      first_name: 'Admin',
+      last_name: 'Administrator',
+      admin: true
+    }  
   ])
 }
 
