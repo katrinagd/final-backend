@@ -3,7 +3,10 @@ const mongoose = require('mongoose')
 const schema = new mongoose.Schema({
   title: String,
   project_description: String,
-  project_link: String,
+  project_link: {
+    type: String,
+    required: true
+  },
   score: Number,
   base: Number
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' } })
