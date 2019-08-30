@@ -1,7 +1,10 @@
 const mongoose = require('mongoose')
 
 const schema = new mongoose.Schema({
-  title: String,
+  title: {
+    type: String,
+    required: true
+  },
   project_description: String,
   project_link: {
     type: String,

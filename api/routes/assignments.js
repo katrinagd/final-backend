@@ -24,12 +24,11 @@ router.put('/:assignmentId', isLoggedIn, isSameUser, async (req, res, next) => {
   const user = await User.findOne(query)
   const assignment = user.assignments.id(assignmentId)
   
-  const { title, project_description, project_link, score, base } = req.body
+  const { title, link, description } = req.body
   assignment.title = title
-  assignment.project_description = project_description
-  assignment.project_link = project_link
-  assignment.score = score
-  assignment.base = base
+  assignment.project_link = link
+  assignment.project_description = description
+  
   await user.save()
   
   res.status(status).json({ status, response: assignment })
